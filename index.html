@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora IVA 14%</title>
+<style>
+body{font-family:sans-serif;max-width:420px;margin:2rem auto;padding:0 1rem}
+input,button{font-size:1.1rem;padding:.6rem;width:100%;margin:.4rem 0;box-sizing:border-box}
+</style>
+</head>
+<body>
+<h1>IVA 14% (AOA)</h1>
+<input id="v" type="number" placeholder="Valor sem IVA (Kz)">
+<button onclick="calc()">Calcular</button>
+<p id="r"></p>
+<script>
+function calc(){
+  var v=parseFloat(document.getElementById('v').value)||0;
+  var iva=v*0.14;
+  var f=function(n){return n.toLocaleString('pt-AO',{minimumFractionDigits:2})};
+  document.getElementById('r').innerHTML=
+    'IVA: '+f(iva)+' Kz<br>Total: '+f(v+iva)+' Kz';
+}
+</script>
+</body>
+</html>
